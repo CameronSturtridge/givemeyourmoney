@@ -43,6 +43,7 @@ local ScanScan = Instance.new("Sound")
 ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
+local VersionNo = 1
 
 
 MainUIClone.Parent = Screen
