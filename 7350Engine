@@ -1,0 +1,350 @@
+--[[ 
+	           _______ __  ___
+	          / / ___//  |/  /
+	     __  / /\__ \/ /|_/ / 
+	    / /_/ /___/ / /  / /  
+	    \____//____/_/  /_/
+ 	    
+
+   	Script Name: JSM Self Checkout
+	Script Author: Coco_Beagle, AlexG_1337, JamieM_2001
+	Script Version: 3.0
+	
+	
+]]--
+
+
+script.Name = "Engine"
+local Machine = script.Parent.Parent
+local Settings = require(script.Parent.Parent.Settings)
+local Screen = script.Parent.Parent.Screen.Screen
+local v2 = false
+local SCOT_APPS = script.Parent.Parent.Parent.Parent.UI_Template_BiggerSCO
+-- clone
+local ShutdownV2Clone = SCOT_APPS.JSM_V3:Clone()
+local MainUIClone = SCOT_APPS.Main:Clone()
+local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
+local BottomOpen = false
+local CaseOpen = false
+local MachineOn = false
+local Boot = MainUIClone.Boot
+local UtilitiesClone = SCOT_APPS.Others:Clone()
+local Release = script.Parent.Parent.ReleaseLever
+local GreFlash = false
+local RedFlash = false
+local YelFlash =  false
+local Tri = Machine["Tri-Light v3 | 7350"]
+local Fan = Machine.CaseFan
+local Touchy = Instance.new("Sound")
+Touchy.Parent = Screen
+Touchy.Name = "TouchBeep"
+Touchy.SoundId = "rbxassetid://5923138272"
+local ScanScan = Instance.new("Sound")
+ScanScan.Parent = Screen
+ScanScan.Name = "Scanner"
+ScanScan.SoundId = "rbxassetid://5305412974"
+
+
+MainUIClone.Parent = Screen
+local Scanner = Machine["JSM | RealScan 7"].ScanLights
+
+
+
+function InterventionBeep()
+	wait(2)
+
+end
+
+function CautionBeep()
+	wait(2)
+
+end
+
+function Startup()
+	wait(2)
+	Screen.Startup:Play()
+end
+
+function Shutdwn()
+	wait(2)
+	Screen.Shutoff:Play()
+end
+
+
+function RFlash()
+	repeat
+		Tri.Red.Color = Color3.fromRGB(255,0,0)
+		Tri.Red.Material = "Neon"
+		wait(.4)
+		Tri.Red.Color = Color3.fromRGB(117,0,0)
+		Tri.Red.Material = "SmoothPlastic"
+		wait(.4)
+	until RedFlash == false
+end
+
+function GFlash()
+	repeat
+		Tri.Gre.Color = Color3.fromRGB(0,255,0)
+		Tri.Gre.Material = "Neon"
+		wait(0.4)
+		Tri.Gre.Color = Color3.fromRGB(39,70,45)
+		Tri.Gre.Material = "SmoothPlastic"
+		wait(0.4)
+	until GreFlash == false
+end
+
+function YFlash()
+	repeat
+		Tri.Yel.Color = Color3.fromRGB(255,255,0)
+		Tri.Yel.Material = "Neon"
+		wait(0.4)
+		Tri.Yel.Color = Color3.fromRGB(160, 95, 53)
+		Tri.Yel.Material = "SmoothPlastic"
+		wait(0.4)
+	until YelFlash == false
+end
+
+
+
+
+Release.KeyPart.ClickDetector.MouseClick:Connect(function(plr)
+	if table.find (MasterConfig.Maintenance["MaintenanceHatch-Users"], plr.UserId) then
+		script.Parent.Parent.UpperCasing.HingeConstraint.TargetAngle = -125 
+		CaseOpen = true
+	else if CaseOpen == true then 
+
+			script.Parent.Parent.UpperCasing.HingeConstraint.TargetAngle = 0
+			CaseOpen = false
+
+		end
+	end
+end)
+
+
+Screen.SurfaceGui:Destroy()
+Screen.Parent.LED.Color = Color3.fromRGB(17, 17, 17)
+Screen.Parent.LED.Material = "SmoothPlastic"
+
+
+
+
+
+wait(2)
+if v2 == true then
+	ShutdownV2Clone.Parent = Screen
+	ShutdownV2Clone.Enabled = true
+	Scanner.CL.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.CL.Material = "Neon"
+	Scanner.CR.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.CR.Material = "Neon"
+	Scanner.L.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.L.Material = "Neon"
+	Scanner.R.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.R.Material = "Neon"
+	Scanner.T1.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.T1.Material = "Neon"
+	Scanner.T2.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.T2.Material = "Neon"
+	Scanner.T3.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.T3.Material = "Neon"
+	Scanner.T4.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.T4.Material = "Neon"
+	Scanner.T5.Color = Color3.fromRGB(255, 0, 0)
+	Scanner.T5.Material = "Neon"
+	RedFlash = true
+	RFlash()
+	MainUIClone:Destroy()
+elseif v2 == false and Settings.StartMode == 1 then
+	print("yes")
+end
+
+wait(6)
+Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
+Screen.Parent.LED.Material = "Neon"
+wait(2)
+Fan.Motor.HingeConstraint.AngularVelocity = 30
+Fan.Parent["JSM | POS Controller"].Body.Running:Play()
+MainUIClone.Enabled = true
+MainUIClone.Boot.Visible = true
+MainUIClone.Boot.B1_Logo.Visible = true
+wait(2)
+MainUIClone.Boot.B1_Logo.Visible = false
+MainUIClone.Boot.B2_BootAgent.Visible = true
+wait(2)
+MainUIClone.Boot.B2_BootAgent.Text4.Visible = true
+wait(2)
+MainUIClone.Boot.B2_BootAgent.Text5.Visible = true
+wait(2)
+MainUIClone.Boot.B2_BootAgent.Text6.Visible = true
+wait(2)
+MainUIClone.Boot.B2_BootAgent.Text8.Visible = true
+wait(3)
+MainUIClone.Boot.B2_BootAgent.Visible = false
+MainUIClone.Boot.B3_BootMenu.Visible = true
+if MainUIClone.Boot.B3_BootMenu.Visible == true then 
+	MainUIClone.Boot.B3_BootMenu.Visible = true
+	for i = 10,0,-1 do 
+		MainUIClone.Boot.B3_BootMenu.Content.Text = "Select boot device. Default will be selected in: "..i 
+		wait(1)
+		if i == 0 then
+			MainUIClone.Boot.B3_BootMenu.Visible = false
+			wait(0.6)
+			MainUIClone.Boot.B4_StartWindows.Visible = true
+			wait(0.5)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.803
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.703
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.603
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.503
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.403
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.303
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.203
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.103
+			wait(0.1)
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0
+			Startup()
+			wait(5)
+			MainUIClone.Boot.B4_StartWindows.Visible = false
+			MainUIClone.Boot.B5_WindowsScreen.Visible = true
+			MainUIClone.Boot.B5_WindowsScreen.Script.Enabled = true
+			wait(5)
+			MainUIClone.Boot.B5_WindowsScreen.LoadText.Text = "Welcome"
+			wait(5)
+			MainUIClone.Boot.B5_WindowsScreen.Script.Enabled = false
+			MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.9
+			MainUIClone.Boot.B5_WindowsScreen.LoadText.Text = "Starting Up..."
+			MainUIClone.Boot.B5_WindowsScreen.Script.Disabled = true
+			MainUIClone.Boot.B5_WindowsScreen.Visible = false
+			MainUIClone.Boot.B6_CmdPrompt.Visible = true
+			wait(0.5)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.803
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.703
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.603
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.503
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.403
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.303
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.203
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.103
+			wait(0.1)
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0
+			wait(3)
+			MainUIClone.Boot.B6_CmdPrompt.Window.Visible = true
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line2.Visible = true
+			wait(2)
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line3.Visible = true
+			wait(2)
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line4.Visible = true
+			wait(5)
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line5.Visible = true
+			wait(6)
+			MainUIClone.Boot.B6_CmdPrompt.Visible = false
+			MainUIClone.Boot.B6_CmdPrompt.Window.Visible = false
+			wait(0.1)
+			MainUIClone.Boot.B7_DeviceConfig.Visible = true
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line2.Visible = false
+			MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 1
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line3.Visible = false
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line4.Visible = false
+			MainUIClone.Boot.B6_CmdPrompt.Window.Line5.Visible = false
+			MainUIClone.Boot.B7_DeviceConfig.Visible = true
+			MainUIClone.Boot.B7_DeviceConfig.WindowMin.Visible = true
+			wait(5)
+			MainUIClone.Boot.B7_DeviceConfig.WindowMin.Visible = false
+			Boot.B7_DeviceConfig.Window.Visible = true
+			wait(5)
+			Boot.B7_DeviceConfig.Window.Body.Txt3.Text = "Device Found"
+			Boot.B7_DeviceConfig.Window.Body.Txt3.TextColor3 = Color3.fromRGB(0, 127, 0)
+			wait(4)
+			Boot.B7_DeviceConfig.Window.Body.Txt6.Text = "Device Found"
+			Boot.B7_DeviceConfig.Window.Body.Txt6.TextColor3 = Color3.fromRGB(0, 127, 0)
+			wait(4)
+			Boot.B7_DeviceConfig.Window.Body.Txt9.Text = "Device Found"
+			Boot.B7_DeviceConfig.Window.Body.Txt9.TextColor3 = Color3.fromRGB(0, 127, 0)
+			wait(4)
+			Boot.B7_DeviceConfig.Window.Body.Txt12.Text = "Device Found"
+			Boot.B7_DeviceConfig.Window.Body.Txt12.TextColor3 = Color3.fromRGB(0, 127, 0)
+			wait(5)
+			Boot.B7_DeviceConfig.Visible = false
+			wait(1)
+			Boot.B8_ClosedStage.Calibration.Visible = true
+			Boot.B8_ClosedStage.Visible = true
+			Boot.B7_DeviceConfig.Window.Body.Txt3.Text = "Processing..."
+			Boot.B7_DeviceConfig.Window.Body.Txt3.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Boot.B7_DeviceConfig.Window.Body.Txt6.Text = "Processing..."
+			Boot.B7_DeviceConfig.Window.Body.Txt6.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Boot.B7_DeviceConfig.Window.Body.Txt9.Text = "Processing..."
+			Boot.B7_DeviceConfig.Window.Body.Txt9.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Boot.B7_DeviceConfig.Window.Body.Txt12.Text = "Processing..."
+			Boot.B7_DeviceConfig.Window.Body.Txt12.TextColor3 = Color3.fromRGB(0, 0, 0)
+			if Boot.B8_ClosedStage.Calibration.Visible == true then 
+				Boot.B8_ClosedStage.Calibration.Visible = true
+				for i = 3,0,-1 do 
+					Boot.B8_ClosedStage.Calibration.Text2.Text = "Calibrating camera background, capturing in "..i.."..."
+					wait(1)
+
+					if i == 0 then
+						Boot.B8_ClosedStage.Calibration.Visible = false
+						wait(2)
+						Boot.B8_ClosedStage.Message.Visible = true
+						wait(5)
+						Boot.B8_ClosedStage.Message.Text2.Text = "Starting Device Manager"
+						wait(4)
+						Boot.B8_ClosedStage.Message.Text2.Text = "Starting POS Manager"
+						Boot.B8_ClosedStage.Visible = false
+						Boot.Visible = false
+						Boot.B8_ClosedStage.Message.Text2.Text = "Disconnected"
+						MainUIClone.Application.Visible = true
+						MainUIClone.Application.Darkened.Visible = true
+						wait(2)
+						MainUIClone.Application.Darkened.JSMMessage.Visible = true
+						MainUIClone.Application.Darkened.JSMMessage.btn_Continue.MouseButton1Click:Connect(function()
+							Touchy:Play()
+							MainUIClone.Application.Darkened.JSMMessage.Visible = false
+							MainUIClone.Application.Darkened.DataTransfer.Body.Text = "Data is currently being transfered from the handset."
+							wait(0.2)
+							MainUIClone.Application.Darkened.DataTransfer.Visible = true
+							wait(5)
+							MainUIClone.Application.Darkened.DataTransfer.Visible = false
+							MainUIClone.Application.Darkened.TransferSuspendFail.ReasonCodes.Reason.Text = "Attempting to repair errors"
+							wait(5)
+							MainUIClone.Application.Darkened.DataTransferSuspend.Visible = true
+							wait(5)
+							MainUIClone.Application.Darkened.DataTransfer.Visible = false
+							MainUIClone.Application.Darkened.TransferSuspendFail.btn_Continue.Active = false
+							wait(0.2)
+							MainUIClone.Application.Darkened.TransferSuspendFail.Visible = true
+							MainUIClone.Application.Darkened.TransferSuspendFail.ReasonCodes.Reason.Text = "Repair Status: Failed"
+							wait(1)
+							MainUIClone.Application.Darkened.TransferSuspendFail.btn_Continue.Active = true
+						end)
+						MainUIClone.Application.Darkened.TransferSuspendFail.btn_Continue.MouseButton1Click:Connect(function()
+							Touchy:Play()
+							MainUIClone.Boot.BSOD.Text2.Text = "SYSTEM_STOPPED_RESPONDING"
+							MainUIClone.Boot.BSOD.Visible = true
+							MainUIClone.Boot.Visible = true
+							MainUIClone.Application.Visible = false
+							RedFlash = true
+							RFlash()
+						end)
+					end
+				end
+			end
+		end
+	end
+end
+
+
+
