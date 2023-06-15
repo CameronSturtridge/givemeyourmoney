@@ -13,7 +13,6 @@
 	
 ]]--
 
-
 script.Name = "Engine"
 local Machine = script.Parent.Parent
 local Settings = require(script.Parent.Parent.Settings)
@@ -106,8 +105,13 @@ function YFlash()
 end
 
 
+while true do 
+GFlash()
+GreFlash = true 
+end
 
 
+--[[
 Release.KeyPart.ClickDetector.MouseClick:Connect(function(plr)
 	if table.find (MasterConfig.Maintenance["MaintenanceHatch-Users"], plr.UserId) then
 		script.Parent.Parent.UpperCasing.HingeConstraint.TargetAngle = -125 
@@ -345,7 +349,7 @@ if MainUIClone.Boot.B3_BootMenu.Visible == true then
 			end
 		end
 	end
-end
+end --]]
 
 
 
