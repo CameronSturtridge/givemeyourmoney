@@ -18,7 +18,7 @@ local Machine = script.Parent.Parent
 local Settings = require(script.Parent.Parent.Settings)
 local Screen = script.Parent.Parent.Screen.Screen
 local v2 = false
-local SCOT_APPS = script.Parent.Parent.Parent.Parent.UI_Template_BiggerSCO
+local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.SCOV3.Main
 -- clone
 local ShutdownV2Clone = SCOT_APPS.JSM_V3:Clone()
 local MainUIClone = SCOT_APPS.Main:Clone()
@@ -104,14 +104,6 @@ function YFlash()
 	until YelFlash == false
 end
 
-
-while true do 
-GFlash()
-GreFlash = true 
-end
-
-
---[[
 Release.KeyPart.ClickDetector.MouseClick:Connect(function(plr)
 	if table.find (MasterConfig.Maintenance["MaintenanceHatch-Users"], plr.UserId) then
 		script.Parent.Parent.UpperCasing.HingeConstraint.TargetAngle = -125 
@@ -163,6 +155,8 @@ elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
 end
 
+
+if 
 wait(6)
 Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 Screen.Parent.LED.Material = "Neon"
@@ -349,7 +343,8 @@ if MainUIClone.Boot.B3_BootMenu.Visible == true then
 			end
 		end
 	end
-end --]]
+end 
+
 
 
 
