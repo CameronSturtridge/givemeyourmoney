@@ -127,7 +127,7 @@ Screen.Parent.LED.Material = "SmoothPlastic"
 
 
 
---[[ wait(2)
+wait(2)
 if v2 == true then
 	ShutdownV2Clone.Parent = Screen
 	ShutdownV2Clone.Enabled = true
@@ -154,7 +154,7 @@ if v2 == true then
 	MainUIClone:Destroy()
 elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
-end --]]
+end 
 
 
 
