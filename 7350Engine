@@ -61,11 +61,9 @@ if LoopUpdate == true then
 	MainUIClone.Enabled = true
 	MainUIClone.Boot.Visible = true
 	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
-	wait(10)
-	Boot.B7_DeviceConfig.Visible = false
-	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
-	wait(0.2)
-script:Destroy()
+Boot.B7_DeviceConfig.Parent = Screen.Main
+MainUIClone.Application:Destroy()
+MainUIClone.Item:Destroy()
 end
 
 
@@ -194,7 +192,7 @@ end
 
 
 
-if VersionNo == 2 then
+if VersionNo == 2 and LoopUpdate == false then
 wait(6)
 Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 Screen.Parent.LED.Material = "Neon"
