@@ -35,7 +35,7 @@ local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.CustomSCOV3
 local ShutdownV2Clone = SCOT_APPS["Goodbye!"]
 local MainUIClone = SCOT_APPS.Application:Clone()
 local Boot = SCOT_APPS.Boot:Clone()
-local Item = SCOT_APPS.Item:Clone
+local Item = SCOT_APPS.Item:Clone()
 local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
 local BottomOpen = false
 local CaseOpen = false
@@ -86,7 +86,6 @@ warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 end
 
 
-UIClone.Parent = Screen
 local Scanner = Machine["JSM | RealScan 7"].ScanLights
 
 
