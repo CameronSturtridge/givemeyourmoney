@@ -85,7 +85,7 @@ end
 local LoopUpdate = true
 
 if LoopUpdate == true then
-	MainUIClone.Enabled = true
+	MainUIClone.Visible = true
 	MainUIClone.Boot.Visible = true
 	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
 	wait(10)
