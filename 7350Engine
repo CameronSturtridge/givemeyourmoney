@@ -55,6 +55,18 @@ ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 2
+local LoopUpdate = true
+
+if LoopUpdate = true then
+	MainUIClone.Enabled = true
+	MainUIClone.Boot.Visible = true
+	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+	wait(10)
+	Boot.B7_DeviceConfig.Visible = false
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
+	wait(0.2)
+script:Destroy()
+end
 
 
 if game.CreatorId == 1575496187 then
