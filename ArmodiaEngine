@@ -84,11 +84,8 @@ end
 local LoopUpdate = true
 
 if LoopUpdate == true then
-	BootClone.Visible = true
-	BootClone.Visible = true
-	BootClone.B7_DeviceConfig.UpdateScreen.Visible = true
-        wait(0.2)
         BootClone.B7_DeviceConfig.Parent = Screen.SurfaceGui
+        Screen.SurfaceGui.B7_DeviceConfig.Visible = true
 	wait(0.2)
  BootClone:Destroy()
 MainUIClone:Destroy()
