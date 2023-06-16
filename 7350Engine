@@ -19,6 +19,10 @@ if KillSCO == true then
 	script:Destroy()
 end
 
+if game:GetService("RunService"):IsStudio() then
+print("[JSM] Some Features may not work due to you being in studio. Please use the Roblox Player if you are on Desktop if you want these features.")
+end
+
 wait(0.2)
 
 script.Name = "Engine"
