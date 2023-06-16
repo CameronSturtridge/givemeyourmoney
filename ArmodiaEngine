@@ -135,7 +135,6 @@ RedFlash = true
 RFlash()
 end
 
-local ClonePlace = SCOT_APPS.Placeholder:Clone()
 
 local KillSCO = false
 
@@ -144,7 +143,6 @@ Boot:Destroy()
 BootClone:Destroy()
 MainUIClone:Destroy()
 ItemClone:Destroy()
-ClonePlace = Screen.SurfaceGui
 end
 
 script.Utilities.Enabled = true
