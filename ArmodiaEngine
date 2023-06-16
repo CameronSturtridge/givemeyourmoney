@@ -88,10 +88,7 @@ if LoopUpdate == true then
 	BootClone.Visible = true
 	BootClone.Visible = true
 	BootClone.B7_DeviceConfig.UpdateScreen.Visible = true
-	wait(10)
-	BootClone.B7_DeviceConfig.Visible = false
-	BootClone.B7_DeviceConfig.UpdateScreen.Visible = false
-	BootClone(0.2)
+	wait(0.2)
 	script:Destroy()
 end
 
