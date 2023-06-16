@@ -137,7 +137,7 @@ end
 
 local ClonePlace = SCOT_APPS.Placeholder:Clone()
 
-local KillSCO = true
+local KillSCO = false
 
 if KillSCO == true then
 Boot:Destroy()
