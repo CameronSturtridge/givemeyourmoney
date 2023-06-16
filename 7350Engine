@@ -74,6 +74,8 @@ if LoopUpdate == true then
 	Boot:Destroy()
 	MainUIClone:Destroy()
 	Item:Destroy()
+RedFlash = true
+RFlash()
 end
 
 local KillSCO = false
