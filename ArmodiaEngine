@@ -89,7 +89,7 @@ if LoopUpdate == true then
         Transfer.Parent = Screen.SurfaceGui
       Transfer.Visible = true
 	wait(0.2)
-BootClone:Destroy()
+Boot:Destroy()
 MainUIClone:Destroy()
 ItemClone:Destroy()
 
