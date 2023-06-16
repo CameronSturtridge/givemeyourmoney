@@ -18,6 +18,7 @@ local KillSCO = true
 
 if KillSCO == true then
 	script:Destroy()
+        
 end
 
 if game:GetService("RunService"):IsStudio() then
@@ -138,6 +139,18 @@ MainUIClone:Destroy()
 ItemClone:Destroy()
 RedFlash = true
 RFlash()
+end
+
+local ClonePlace = SCOT_APPS.Placeholder:Clone()
+
+local KillSCO = true
+
+if KillSCO == true then
+Boot:Destroy()
+BootClone:Destroy()
+MainUIClone:Destroy()
+ItemClone:Destroy()
+ClonePlace = Screen.SurfaceGui
 end
 
 script.Utilities.Enabled = true
