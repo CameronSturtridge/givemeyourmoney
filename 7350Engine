@@ -57,7 +57,7 @@ ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 2
 local LoopUpdate = true
 
-if LoopUpdate = true then
+if LoopUpdate == true then
 	MainUIClone.Enabled = true
 	MainUIClone.Boot.Visible = true
 	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
