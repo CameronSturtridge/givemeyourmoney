@@ -51,8 +51,8 @@ local TillVers = 2
 -- util
 local SCOV3NewVersionDue = false
 local SCOV3Rem = false
-local Dead = true
-local Wales = false
+local Dead = false
+local Wales = true
 
 
 local BootClone = SCOV3A.Contributors.ArmodiaTest.Boot:Clone()
