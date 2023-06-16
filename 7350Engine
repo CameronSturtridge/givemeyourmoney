@@ -7,7 +7,7 @@
  	    
 
    	Script Name: JSM Self Checkout 7350
-	Script Author: AlexG_1337, JamieM_2001, C_AMERON21
+	Script Author: Coco_Beagle, AlexG_1337, JamieM_2001
 	Script Version: 3.0
 	
 	
@@ -18,16 +18,16 @@ local Machine = script.Parent.Parent
 local Settings = require(script.Parent.Parent.Settings)
 local Screen = script.Parent.Parent.Screen.Screen
 local v2 = false
-local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.SCOV3.Main
+local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3["SCOV3 "].Main
 -- clone
-local ShutdownV2Clone = SCOT_APPS.JSM_V3:Clone()
-local MainUIClone = SCOT_APPS.Main:Clone()
+local ShutdownV2Clone = SCOT_APPS["Goodbye!"]:Clone()
+local MainUIClone = SCOT_APPS:Clone()
 local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
 local BottomOpen = false
 local CaseOpen = false
 local MachineOn = false
 local Boot = MainUIClone.Boot
-local UtilitiesClone = SCOT_APPS.Others:Clone()
+local UtilitiesClone = SCOT_APPS.Parent.Others:Clone()
 local Release = script.Parent.Parent.ReleaseLever
 local GreFlash = false
 local RedFlash = false
@@ -43,6 +43,7 @@ ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 1
+local Update = SCOT_APPS.Parent.Parent.Parent.UpdateScreen:Clone()
 
 
 MainUIClone.Parent = Screen
@@ -156,8 +157,12 @@ elseif v2 == false and Settings.StartMode == 1 then
 end
 
 
- 
-wait(6)
+if VersionNo == 2 then 
+	Update.Parent = MainUIClone.Boot.B7_DeviceConfig
+	Update.Visible = true
+	MainUIClone.Boot.B7_DeviceConfig.Visible = true
+	MainUIClone.Enabled = true
+wait(9)
 Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 Screen.Parent.LED.Material = "Neon"
 wait(2)
@@ -344,7 +349,5 @@ if MainUIClone.Boot.B3_BootMenu.Visible == true then
 		end
 	end
 end 
-
-
-
+end
 
