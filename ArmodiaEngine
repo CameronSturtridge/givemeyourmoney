@@ -128,11 +128,13 @@ if LoopUpdate == true then
         Transfer.Parent = Screen.SurfaceGui
       Transfer.Visible = true
       RedFlash = true 
-RFlash()
 	wait(0.2)
 Boot:Destroy()
+BootClone:Destroy()
 MainUIClone:Destroy()
 ItemClone:Destroy()
+wait(0.02)
+RFlash()
 
 end
 
