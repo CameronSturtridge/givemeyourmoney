@@ -117,7 +117,7 @@ else
 	Machine:Destroy()
 end
 
-local LoopUpdate = true
+local LoopUpdate = false
 local Transfer =  BootClone.B7_DeviceConfig:Clone()
 
 
