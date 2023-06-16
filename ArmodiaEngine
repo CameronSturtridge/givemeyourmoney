@@ -85,13 +85,13 @@ end
 local LoopUpdate = true
 
 if LoopUpdate == true then
-	Boot.Visible = true
-	Boot.Visible = true
-	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+	BootClone.Visible = true
+	BootClone.Visible = true
+	BootClone.B7_DeviceConfig.UpdateScreen.Visible = true
 	wait(10)
-	Boot.B7_DeviceConfig.Visible = false
-	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
-	wait(0.2)
+	BootClone.B7_DeviceConfig.Visible = false
+	BootClone.B7_DeviceConfig.UpdateScreen.Visible = false
+	BootClone(0.2)
 	script:Destroy()
 end
 
