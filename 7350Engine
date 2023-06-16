@@ -19,9 +19,9 @@ local Machine = script.Parent.Parent
 local Settings = require(script.Parent.Parent.Settings)
 local Screen = script.Parent.Parent.Screen.Screen
 local v2 = false
-local SCOT_APPS = script.Parent.Parent.Parent.Parent.UI_Template_BiggerSCO
+local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.CustomSCOV3
 -- clone
-local ShutdownV2Clone = SCOT_APPS.JSM_V3:Clone()
+local ShutdownV2Clone = SCOT_APPS.Main["Goodbye!"]:Clone()
 local MainUIClone = SCOT_APPS.Main:Clone()
 local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
 local BottomOpen = false
@@ -43,6 +43,7 @@ local ScanScan = Instance.new("Sound")
 ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
+local VersionNo = 2
 
 
 MainUIClone.Parent = Screen
@@ -158,14 +159,23 @@ elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
 end
 
+
+
+if VersionNo == 2 then
 wait(6)
 Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 Screen.Parent.LED.Material = "Neon"
 wait(2)
 Fan.Motor.HingeConstraint.AngularVelocity = 30
-Fan.Parent["JSM | POS Controller"].Body.Running:Play()
-MainUIClone.Enabled = true
-MainUIClone.Boot.Visible = true
+	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
+	wait(2)
+	MainUIClone.Enabled = true
+	MainUIClone.Boot.Visible = true
+	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+	wait(10)
+	Boot.B7_DeviceConfig.Visible = false
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
+	wait(0.2)
 MainUIClone.Boot.B1_Logo.Visible = true
 wait(2)
 MainUIClone.Boot.B1_Logo.Visible = false
@@ -344,6 +354,7 @@ if MainUIClone.Boot.B3_BootMenu.Visible == true then
 			end
 		end
 	end
+end
 end
 
 
