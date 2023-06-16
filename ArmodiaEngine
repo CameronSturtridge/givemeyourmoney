@@ -73,7 +73,6 @@ local UIUK = game.ServerStorage.UI_ModuleA.UK
 local Wales = UIUK.Parent.Wales
 local CloneWales= Wales:Clone() 
 local Running = Screen.Running
-local BootTransfer = 
 
 if game.CreatorId == 1575496187 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
