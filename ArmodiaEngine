@@ -74,53 +74,6 @@ local Wales = UIUK.Parent.Wales
 local CloneWales= Wales:Clone() 
 local Running = Screen.Running
 
-if game.CreatorId == 1575496187 then
-	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
-else 
-	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
-	Machine:Destroy()
-end
-
-local LoopUpdate = true
-local Transfer =  BootClone.B7_DeviceConfig:Clone()
-
-
-if LoopUpdate == true then
-        Transfer.Parent = Screen.SurfaceGui
-      Transfer.Visible = true
-	wait(0.2)
-Boot:Destroy()
-MainUIClone:Destroy()
-ItemClone:Destroy()
-
-end
-
-script.Utilities.Enabled = true
-
-
-
-
-function InterventionBeep()
-	wait(2)
-
-end
-
-function CautionBeep()
-	wait(2)
-
-end
-
-function Startup()
-	wait(2)
-	Screen.Startup:Play()
-end
-
-function Shutdwn()
-	wait(2)
-	Screen.Shutoff:Play()
-end
-
-
 function RFlash()
 	repeat
 		Tri.LED.Color = Color3.fromRGB(255,0,0)
@@ -159,6 +112,57 @@ function YFlash()
 		wait(0.4)
 	until YelFlash == false
 end
+
+if game.CreatorId == 1575496187 then
+	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
+else 
+	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
+	Machine:Destroy()
+end
+
+local LoopUpdate = true
+local Transfer =  BootClone.B7_DeviceConfig:Clone()
+
+
+if LoopUpdate == true then
+        Transfer.Parent = Screen.SurfaceGui
+      Transfer.Visible = true
+      RedFlash = true 
+RFlash()
+	wait(0.2)
+Boot:Destroy()
+MainUIClone:Destroy()
+ItemClone:Destroy()
+
+end
+
+script.Utilities.Enabled = true
+
+
+
+
+function InterventionBeep()
+	wait(2)
+
+end
+
+function CautionBeep()
+	wait(2)
+
+end
+
+function Startup()
+	wait(2)
+	Screen.Startup:Play()
+end
+
+function Shutdwn()
+	wait(2)
+	Screen.Shutoff:Play()
+end
+
+
+
 
 
 
