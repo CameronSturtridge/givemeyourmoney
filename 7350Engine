@@ -61,7 +61,9 @@ if LoopUpdate == true then
 	MainUIClone.Enabled = true
 	MainUIClone.Boot.Visible = true
 	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
-Boot.B7_DeviceConfig.Parent = Screen.Main
+wait(0.3)
+Boot.B7_DeviceConfig.Parent = Screen.SurfaceGui
+wait(0.2)
 MainUIClone.Application:Destroy()
 MainUIClone.Item:Destroy()
 end
@@ -76,7 +78,7 @@ warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 end
 
 
-MainUIClone.Parent = Screen
+UIClone.Parent = Screen
 local Scanner = Machine["JSM | RealScan 7"].ScanLights
 
 
