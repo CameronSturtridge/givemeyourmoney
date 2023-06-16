@@ -21,7 +21,7 @@ if KillSCO == true then
 end
 
 if game:GetService("RunService"):IsStudio() then
-print("[JSM] Some Features may not work due to you being in studio. Please use the Roblox Player if you are on Desktop if you want these features.")
+	print("[JSM] Some Features may not work due to you being in studio. Please use the Roblox Player if you are on Desktop if you want these features.")
 end
 
 wait(0.2)
@@ -77,14 +77,14 @@ local Running = Screen.Running
 if game.CreatorId == 1575496187 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
 else 
-warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
+	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 	script:Destroy()
 	Machine:Destroy()
 end
 
 local LoopUpdate = true
 
-if LoopUpdate = true then
+if LoopUpdate == true then
 	MainUIClone.Enabled = true
 	MainUIClone.Boot.Visible = true
 	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
@@ -92,7 +92,7 @@ if LoopUpdate = true then
 	Boot.B7_DeviceConfig.Visible = false
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
 	wait(0.2)
-script:Destroy()
+	script:Destroy()
 end
 
 script.Utilities.Enabled = true
@@ -174,7 +174,7 @@ Screen.Parent["Button Panel"].PWRLED.Material = "SmoothPlastic"
 
 
 wait(2)
-if Global_Settings.SCOV3Rem == true then
+if SCOV3Rem == true then
 	ShutdownV2Clone.Parent = Screen.SurfaceGui
 	ShutdownV2Clone.Visible = true
 	RedFlash = true
@@ -183,13 +183,13 @@ if Global_Settings.SCOV3Rem == true then
 elseif v2 == false and Settings.StartMode == 1 then
 end
 
-if Global_Settings.SCOV3NewVersionDue == true then
+if SCOV3NewVersionDue == true then
 	ArmodiaClone.Parent = Screen.SurfaceGui
 	ArmodiaClone.Visible = true
 	MainUIClone:Destroy()
 end
 
-if Global_Settings.Dead == true then
+if Dead == true then
 	DeadClone.Parent = Screen.SurfaceGui
 	DeadClone.Visible = true
 	MainUIClone:Destroy()
@@ -199,7 +199,7 @@ if Global_Settings.Dead == true then
 	UIUK.Parent = Screen
 	UIUK:Play()
 end
-if Global_Settings.Wales == true then
+if Wales == true then
 	DeadClone.Parent = Screen.SurfaceGui
 	DeadClone.Visible = true
 	MainUIClone:Destroy()
