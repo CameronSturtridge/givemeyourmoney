@@ -32,6 +32,7 @@ local Screen = script.Parent.Parent.Screen.Screen
 local v2 = false
 local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.CustomSCOV3
 -- clone
+local ShutdownV2Clone = SCOT_APPS["Goodbye!"]
 local MainUIClone = SCOT_APPS.Main:Clone()
 local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
 local BottomOpen = false
@@ -150,7 +151,7 @@ Screen.Parent.LED.Material = "SmoothPlastic"
 
 
 wait(2)
---[[ if v2 == true then
+if v2 == true then
 	ShutdownV2Clone.Parent = Screen
 	ShutdownV2Clone.Enabled = true
 	Scanner.CL.Color = Color3.fromRGB(255, 0, 0)
@@ -177,7 +178,7 @@ wait(2)
         script:Destroy()
 elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
-end --]]
+end
 
 
 
