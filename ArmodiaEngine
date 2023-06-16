@@ -248,7 +248,7 @@ if Wales == false and Dead == false and SCOV3NewVersionDue == false and SCOV3Rem
 	Screen.Parent["Button Panel"].PWRLED.Color = Color3.fromRGB(0, 255, 0)
 	Screen.Parent["Button Panel"].PWRLED.Material = "Neon"
 	wait(2)
-	MainUIClone.Enabled = true
+	MainUIClone.Visible = true
 	MainUIClone.Boot.Visible = true
 	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
 	wait(10)
