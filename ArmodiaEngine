@@ -25,7 +25,7 @@ local v2 = false
 local SCOT_APPS = game.ServerStorage.UI_ModuleA
 local SCOV3A = SCOT_APPS.SCOV3Armodia
 -- clone
-local ShutdownV2Clone = SCOT_APPS.SCOV3Armodia.Contributors.ArmodiaTest["Goodbye!"]:Clone()
+-- local ShutdownV2Clone = SCOT_APPS.SCOV3Armodia.Contributors.ArmodiaTest["Goodbye!"]:Clone()
 local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
 local MachineOn = false
 local GreFlash = false
