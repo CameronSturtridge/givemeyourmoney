@@ -13,6 +13,13 @@
 	
 ]]--
 
+local KillSCO = false
+
+if KillSCO == true then
+	script:Destroy()
+end
+
+wait(0.2)
 
 script.Name = "Engine"
 local Machine = script.Parent.Parent
@@ -44,6 +51,14 @@ ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 2
+
+
+if game.CreatorId == 1575496187 then
+	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
+else 
+	script:Destroy()
+	Machine:Destroy()
+end
 
 
 MainUIClone.Parent = Screen
@@ -356,5 +371,3 @@ if MainUIClone.Boot.B3_BootMenu.Visible == true then
 	end
 end
 end
-
-
