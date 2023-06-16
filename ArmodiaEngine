@@ -14,13 +14,22 @@
 ]]--
 
 
-wait(5)
+local KillSCO = false
+
+if KillSCO == true then
+	script:Destroy()
+end
+
+if game:GetService("RunService"):IsStudio() then
+print("[JSM] Some Features may not work due to you being in studio. Please use the Roblox Player if you are on Desktop if you want these features.")
+end
+
+wait(0.2)
 script.Name = "Engine"
 
 local Machine = script.Parent.Parent
 local Settings = require(script.Parent.Parent.ArmodiaSettings)
 local Screen = script.Parent.Parent.Screen.Screen
-local Global_Settings = require(script.SCOV3Module)
 local v2 = false
 local SCOT_APPS = game.ServerStorage.UI_ModuleA
 local SCOV3A = SCOT_APPS.SCOV3Armodia
@@ -42,6 +51,12 @@ ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local TillVers = 2
+-- util
+local SCOV3NewVersionDue = false
+local SCOV3Rem = false
+local Dead = false
+local Wales = false
+
 
 local BootClone = SCOV3A.Contributors.ArmodiaTest.Boot:Clone()
 local MainUIClone = SCOV3A.Contributors.ArmodiaTest.Application:Clone()
@@ -59,6 +74,13 @@ local Wales = UIUK.Parent.Wales
 local CloneWales= Wales:Clone() 
 local Running = Screen.Running
 
+if game.CreatorId == 1575496187 then
+	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
+else 
+warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
+	script:Destroy()
+	Machine:Destroy()
+end
 
 script.Utilities.Enabled = true
 
@@ -206,13 +228,20 @@ end
 
 
 wait(2)
-if Global_Settings.Wales == false and Global_Settings.Dead == false and Global_Settings.SCOV3NewVersionDue == false and Global_Settings.SCOV3Rem == false then
+if Wales == false and Dead == false and SCOV3NewVersionDue == false and SCOV3Rem == false then
 	RFlash()
 	wait(2)
 	RedFlash = false
 	Screen.Parent["Button Panel"].PWRLED.Color = Color3.fromRGB(0, 255, 0)
 	Screen.Parent["Button Panel"].PWRLED.Material = "Neon"
 	wait(2)
+	MainUIClone.Enabled = true
+	MainUIClone.Boot.Visible = true
+	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+	wait(10)
+	Boot.B7_DeviceConfig.Visible = false
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
+	wait(0.2)
 	Boot.Visible = true
 	Boot.B1_Logo.Visible = true
 	wait(2)
