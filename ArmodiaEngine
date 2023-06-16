@@ -51,7 +51,7 @@ local TillVers = 2
 -- util
 local SCOV3NewVersionDue = false
 local SCOV3Rem = false
-local Dead = false
+local Dead = true
 local Wales = false
 
 
