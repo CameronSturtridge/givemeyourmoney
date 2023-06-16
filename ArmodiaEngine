@@ -49,9 +49,9 @@ ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local TillVers = 2
 -- util
-local SCOV3NewVersionDue = false
+local SCOV3NewVersionDue = true
 local SCOV3Rem = false
-local Dead = true
+local Dead = false
 local Wales = false
 
 
