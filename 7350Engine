@@ -1,4 +1,4 @@
---[[
+--[[ 
 	           _______ __  ___
 	          / / ___//  |/  /
 	     __  / /\__ \/ /|_/ / 
@@ -6,19 +6,20 @@
 	    \____//____/_/  /_/
  	    
 
-   	Script Name: JSM Self Checkout 7350
+   	Script Name: JSM Self Checkout
 	Script Author: Coco_Beagle, AlexG_1337, JamieM_2001
 	Script Version: 3.0
 	
 	
 ]]--
 
+
 script.Name = "Engine"
 local Machine = script.Parent.Parent
 local Settings = require(script.Parent.Parent.Settings)
 local Screen = script.Parent.Parent.Screen.Screen
 local v2 = false
-local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.SCOV3.Main
+local SCOT_APPS = script.Parent.Parent.Parent.Parent.UI_Template_BiggerSCO
 -- clone
 local ShutdownV2Clone = SCOT_APPS.JSM_V3:Clone()
 local MainUIClone = SCOT_APPS.Main:Clone()
@@ -42,7 +43,6 @@ local ScanScan = Instance.new("Sound")
 ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
-local VersionNo = 1
 
 
 MainUIClone.Parent = Screen
@@ -104,6 +104,9 @@ function YFlash()
 	until YelFlash == false
 end
 
+
+
+
 Release.KeyPart.ClickDetector.MouseClick:Connect(function(plr)
 	if table.find (MasterConfig.Maintenance["MaintenanceHatch-Users"], plr.UserId) then
 		script.Parent.Parent.UpperCasing.HingeConstraint.TargetAngle = -125 
@@ -154,7 +157,6 @@ if v2 == true then
 elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
 end
-
 
 wait(6)
 Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
@@ -342,7 +344,6 @@ if MainUIClone.Boot.B3_BootMenu.Visible == true then
 			end
 		end
 	end
-end 
-
+end
 
 
