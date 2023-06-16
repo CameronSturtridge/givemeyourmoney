@@ -26,7 +26,7 @@ script.Name = "Engine"
 local Machine = script.Parent.Parent
 local Settings = require(script.Parent.Parent.Settings)
 local Screen = script.Parent.Parent.Screen.Screen
-local v2 = false
+local v2 = true
 local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.CustomSCOV3
 -- clone
 local ShutdownV2Clone = SCOT_APPS["Goodbye!"]
@@ -53,7 +53,7 @@ ScanScan.Parent = Screen
 ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 2
-local LoopUpdate = true
+local LoopUpdate = false
 
 Boot.Parent = Screen.SurfaceGui
 Item.Parent = Screen.SurfaceGui
