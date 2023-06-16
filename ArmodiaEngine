@@ -78,7 +78,6 @@ if game.CreatorId == 1575496187 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
-	script:Destroy()
 	Machine:Destroy()
 end
 
@@ -88,8 +87,13 @@ if LoopUpdate == true then
 	BootClone.Visible = true
 	BootClone.Visible = true
 	BootClone.B7_DeviceConfig.UpdateScreen.Visible = true
+        wait(0.2)
+        BootClone.B7_DeviceConfig.Parent = Screen.SurfaceGui
 	wait(0.2)
-	script:Destroy()
+ BootClone:Destroy()
+MainUIClone:Destroy()
+ItemClone:Destroy()
+
 end
 
 script.Utilities.Enabled = true
