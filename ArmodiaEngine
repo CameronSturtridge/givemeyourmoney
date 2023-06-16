@@ -137,6 +137,7 @@ BootClone:Destroy()
 MainUIClone:Destroy()
 ItemClone:Destroy()
 RedFlash = true
+RFlash()
 end
 
 script.Utilities.Enabled = true
