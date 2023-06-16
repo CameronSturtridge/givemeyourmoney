@@ -14,7 +14,7 @@
 ]]--
 
 
-local KillSCO = false
+local KillSCO = true
 
 if KillSCO == true then
 	script:Destroy()
