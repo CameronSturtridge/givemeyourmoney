@@ -128,7 +128,7 @@ local Transfer =  BootClone.B7_DeviceConfig:Clone()
 
 if LoopUpdate == true then
         Transfer.Parent = Screen.SurfaceGui
-Transfer.Visible = true
+        Screen.SurfaceGui.B7_DeviceConfig.Visible = true
       Transfer.UpdateScreen.Visible = true
 	wait(0.2)
 Boot:Destroy()
