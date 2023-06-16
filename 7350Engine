@@ -33,12 +33,13 @@ local v2 = false
 local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.CustomSCOV3
 -- clone
 local ShutdownV2Clone = SCOT_APPS["Goodbye!"]
-local MainUIClone = SCOT_APPS.Main:Clone()
+local MainUIClone = SCOT_APPS.Application:Clone()
+local Boot = SCOT_APPS.Boot:Clone()
+local Item = SCOT_APPS.Item:Clone
 local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
 local BottomOpen = false
 local CaseOpen = false
 local MachineOn = false
-local Boot = MainUIClone.Boot
 local UtilitiesClone = SCOT_APPS.Others:Clone()
 local Release = script.Parent.Parent.ReleaseLever
 local GreFlash = false
@@ -56,6 +57,13 @@ ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 2
 local LoopUpdate = true
+
+Boot.Parent = Screen.SurfaceGui
+Item.Parent = Screen.SurfaceGui
+MainUIClone.Parent = Screen.SurfaceGui
+
+wait(0.2)
+
 
 if LoopUpdate == true then
 	MainUIClone.Enabled = true
@@ -154,7 +162,7 @@ Release.KeyPart.ClickDetector.MouseClick:Connect(function(plr)
 end)
 
 
-Screen.SurfaceGui:Destroy()
+Screen.SurfaceGui.Placeholder:Destroy()
 Screen.Parent.LED.Color = Color3.fromRGB(17, 17, 17)
 Screen.Parent.LED.Material = "SmoothPlastic"
 
