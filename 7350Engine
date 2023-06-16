@@ -32,7 +32,7 @@ local Screen = script.Parent.Parent.Screen.Screen
 local v2 = false
 local SCOT_APPS = game.ServerStorage.UI_ModuleA.SCOv3.CustomSCOV3
 -- clone
-local ShutdownV2Clone = SCOT_APPS.Main["Goodbye!"]:Clone()
+-- local ShutdownV2Clone = SCOT_APPS.Main["Goodbye!"]:Clone()
 local MainUIClone = SCOT_APPS.Main:Clone()
 local MasterConfig = require(Machine.Parent.Parent.SystemConfig)
 local BottomOpen = false
@@ -175,6 +175,7 @@ wait(2)
 	RedFlash = true
 	RFlash()
 	MainUIClone:Destroy()
+        script:Destroy()
 elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
 end --]]
