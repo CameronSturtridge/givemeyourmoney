@@ -24,6 +24,8 @@ if game:GetService("RunService"):IsStudio() then
 	print("[JSM] Some Features may not work due to you being in studio. Please use the Roblox Player if you are on Desktop if you want these features.")
 end
 
+
+
 wait(0.2)
 script.Name = "Engine"
 
@@ -126,16 +128,12 @@ local Transfer =  BootClone.B7_DeviceConfig:Clone()
 
 if LoopUpdate == true then
         Transfer.Parent = Screen.SurfaceGui
-      Transfer.Visible = true
-      RedFlash = true 
+      Transfer.UpdateScreen.Visible = true
 	wait(0.2)
 Boot:Destroy()
 BootClone:Destroy()
 MainUIClone:Destroy()
 ItemClone:Destroy()
-wait(0.02)
-RFlash()
-
 end
 
 script.Utilities.Enabled = true
