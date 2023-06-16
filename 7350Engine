@@ -157,11 +157,7 @@ elseif v2 == false and Settings.StartMode == 1 then
 end
 
 
-if VersionNo == 2 then 
-	Update.Parent = MainUIClone.Boot.B7_DeviceConfig
-	Update.Visible = true
-	MainUIClone.Boot.B7_DeviceConfig.Visible = true
-	MainUIClone.Enabled = true
+
 wait(9)
 Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 Screen.Parent.LED.Material = "Neon"
