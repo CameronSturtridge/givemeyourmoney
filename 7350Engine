@@ -181,7 +181,7 @@ Screen.Parent.LED.Material = "SmoothPlastic"
 
 wait(2)
 if v2 == true then
-	ShutdownV2Clone.Parent = Screen
+	ShutdownV2Clone.Parent = Screen.SurfaceGui
 	ShutdownV2Clone.Visible = true
 	Scanner.CL.Color = Color3.fromRGB(255, 0, 0)
 	Scanner.CL.Material = "Neon"
