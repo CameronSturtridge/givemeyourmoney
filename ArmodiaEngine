@@ -73,6 +73,7 @@ local UIUK = game.ServerStorage.UI_ModuleA.UK
 local Wales = UIUK.Parent.Wales
 local CloneWales= Wales:Clone() 
 local Running = Screen.Running
+local BootTransfer = 
 
 if game.CreatorId == 1575496187 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
@@ -82,12 +83,14 @@ else
 end
 
 local LoopUpdate = true
+local Transfer =  BootClone.B7_DeviceConfig:Clone()
+
 
 if LoopUpdate == true then
-        BootClone.B7_DeviceConfig.Parent = Screen.SurfaceGui
-        Screen.SurfaceGui.B7_DeviceConfig.Visible = true
+        Transfer.Parent = Screen.SurfaceGui
+      Transfer.Visible = true
 	wait(0.2)
- BootClone:Destroy()
+BootClone:Destroy()
 MainUIClone:Destroy()
 ItemClone:Destroy()
 
@@ -239,7 +242,7 @@ end
 
 
 wait(2)
-if Wales == false and Dead == false and SCOV3NewVersionDue == false and SCOV3Rem == false then
+if Wales == false and Dead == false and SCOV3NewVersionDue == false and SCOV3Rem == false and LoopUpdate == false then
 	RFlash()
 	wait(2)
 	RedFlash = false
