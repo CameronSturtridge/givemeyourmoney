@@ -266,7 +266,7 @@ else
 end
 
 wait(2)
-if Whitelisted == true and KillSCO == false and HTTPError_ALL then
+if Whitelisted == true then
 	Screen.Parent["Button Panel"].PWRLED.Color = Color3.fromRGB(0, 255, 0)
 	Screen.Parent["Button Panel"].PWRLED.Material = "Neon"
 	wait(2)
