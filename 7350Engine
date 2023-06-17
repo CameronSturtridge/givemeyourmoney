@@ -69,13 +69,13 @@ if LoopUpdate == true then
 	B7Clone.Parent = Screen.SurfaceGui
 	B7Clone.Visible = true
 	B7Clone.UpdateScreen.Visible = true
-    
+
 	wait(0.2)
 	Boot:Destroy()
 	MainUIClone:Destroy()
 	Item:Destroy()
-RedFlash = true
-RFlash()
+	RedFlash = true
+	RFlash()
 end
 
 local KillSCO = false
@@ -95,9 +95,9 @@ if HTTPError_ALL == true then
 	Boot.B0_Check.Text1.Text = "Error!"
 	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
 	Boot.B0_Check.BackgroundTransparency = 0
-        Boot.B0_Check.Visible = true
+	Boot.B0_Check.Visible = true
 	wait(0.02)
-        Boot.B0_Check.Parent = Screen.SurfaceGui
+	Boot.B0_Check.Parent = Screen.SurfaceGui
 	warn("[AXON] HTTP Requests must be enabled for Lane: "..Settings.LaneNumber)
 end
 
@@ -233,110 +233,110 @@ if VersionNo == 2 and LoopUpdate == false then
 	Fan.Motor.HingeConstraint.AngularVelocity = 30
 	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
 	wait(2)
-	MainUIClone.Boot.Visible = true
-	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+	Boot.Visible = true
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
 	wait(10)
 	Boot.B7_DeviceConfig.Visible = false
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
 	wait(0.2)
-        MainUIClone.Visible = true
-	MainUIClone.Boot.B1_Logo.Visible = true
+	Boot.Visible = true
+	Boot.B1_Logo.Visible = true
 	wait(2)
-	MainUIClone.Boot.B1_Logo.Visible = false
-	MainUIClone.Boot.B2_BootAgent.Visible = true
+	Boot.B1_Logo.Visible = false
+	Boot.B2_BootAgent.Visible = true
 	wait(2)
-	MainUIClone.Boot.B2_BootAgent.Text4.Visible = true
+	Boot.B2_BootAgent.Text4.Visible = true
 	wait(2)
-	MainUIClone.Boot.B2_BootAgent.Text5.Visible = true
+	Boot.B2_BootAgent.Text5.Visible = true
 	wait(2)
-	MainUIClone.Boot.B2_BootAgent.Text6.Visible = true
+	Boot.B2_BootAgent.Text6.Visible = true
 	wait(2)
-	MainUIClone.Boot.B2_BootAgent.Text8.Visible = true
+	Boot.B2_BootAgent.Text8.Visible = true
 	wait(3)
-	MainUIClone.Boot.B2_BootAgent.Visible = false
-	MainUIClone.Boot.B3_BootMenu.Visible = true
-	if MainUIClone.Boot.B3_BootMenu.Visible == true then 
-		MainUIClone.Boot.B3_BootMenu.Visible = true
+	Boot.B2_BootAgent.Visible = false
+	Boot.B3_BootMenu.Visible = true
+	if Boot.B3_BootMenu.Visible == true then 
+		Boot.B3_BootMenu.Visible = true
 		for i = 10,0,-1 do 
-			MainUIClone.Boot.B3_BootMenu.Content.Text = "Select boot device. Default will be selected in: "..i 
+			Boot.B3_BootMenu.Content.Text = "Select boot device. Default will be selected in: "..i 
 			wait(1)
 			if i == 0 then
-				MainUIClone.Boot.B3_BootMenu.Visible = false
+				Boot.B3_BootMenu.Visible = false
 				wait(0.6)
-				MainUIClone.Boot.B4_StartWindows.Visible = true
+				Boot.B4_StartWindows.Visible = true
 				wait(0.5)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.803
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.803
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.703
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.703
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.603
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.603
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.503
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.503
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.403
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.403
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.303
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.303
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.203
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.203
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.103
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.103
 				wait(0.1)
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0
 				Startup()
 				wait(5)
-				MainUIClone.Boot.B4_StartWindows.Visible = false
-				MainUIClone.Boot.B5_WindowsScreen.Visible = true
-				MainUIClone.Boot.B5_WindowsScreen.Script.Enabled = true
+				Boot.B4_StartWindows.Visible = false
+				Boot.B5_WindowsScreen.Visible = true
+				Boot.B5_WindowsScreen.Script.Enabled = true
 				wait(5)
-				MainUIClone.Boot.B5_WindowsScreen.LoadText.Text = "Welcome"
+				Boot.B5_WindowsScreen.LoadText.Text = "Welcome"
 				wait(5)
-				MainUIClone.Boot.B5_WindowsScreen.Script.Enabled = false
-				MainUIClone.Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.9
-				MainUIClone.Boot.B5_WindowsScreen.LoadText.Text = "Starting Up..."
-				MainUIClone.Boot.B5_WindowsScreen.Script.Disabled = true
-				MainUIClone.Boot.B5_WindowsScreen.Visible = false
-				MainUIClone.Boot.B6_CmdPrompt.Visible = true
+				Boot.B5_WindowsScreen.Script.Enabled = false
+				Boot.B4_StartWindows.WinLogo.ImageTransparency = 0.9
+				Boot.B5_WindowsScreen.LoadText.Text = "Starting Up..."
+				Boot.B5_WindowsScreen.Script.Disabled = true
+				Boot.B5_WindowsScreen.Visible = false
+				Boot.B6_CmdPrompt.Visible = true
 				wait(0.5)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.803
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.803
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.703
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.703
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.603
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.603
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.503
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.503
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.403
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.403
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.303
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.303
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.203
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.203
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0.103
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0.103
 				wait(0.1)
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 0
+				Boot.B6_CmdPrompt.BackgroundTransparency = 0
 				wait(3)
-				MainUIClone.Boot.B6_CmdPrompt.Window.Visible = true
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line2.Visible = true
+				Boot.B6_CmdPrompt.Window.Visible = true
+				Boot.B6_CmdPrompt.Window.Line2.Visible = true
 				wait(2)
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line3.Visible = true
+				Boot.B6_CmdPrompt.Window.Line3.Visible = true
 				wait(2)
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line4.Visible = true
+				Boot.B6_CmdPrompt.Window.Line4.Visible = true
 				wait(5)
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line5.Visible = true
+				Boot.B6_CmdPrompt.Window.Line5.Visible = true
 				wait(6)
-				MainUIClone.Boot.B6_CmdPrompt.Visible = false
-				MainUIClone.Boot.B6_CmdPrompt.Window.Visible = false
+				Boot.B6_CmdPrompt.Visible = false
+				Boot.B6_CmdPrompt.Window.Visible = false
 				wait(0.1)
-				MainUIClone.Boot.B7_DeviceConfig.Visible = true
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line2.Visible = false
-				MainUIClone.Boot.B6_CmdPrompt.BackgroundTransparency = 1
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line3.Visible = false
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line4.Visible = false
-				MainUIClone.Boot.B6_CmdPrompt.Window.Line5.Visible = false
-				MainUIClone.Boot.B7_DeviceConfig.Visible = true
-				MainUIClone.Boot.B7_DeviceConfig.WindowMin.Visible = true
+				Boot.B7_DeviceConfig.Visible = true
+				Boot.B6_CmdPrompt.Window.Line2.Visible = false
+				Boot.B6_CmdPrompt.BackgroundTransparency = 1
+				Boot.B6_CmdPrompt.Window.Line3.Visible = false
+				Boot.B6_CmdPrompt.Window.Line4.Visible = false
+				Boot.B6_CmdPrompt.Window.Line5.Visible = false
+				Boot.B7_DeviceConfig.Visible = true
+				Boot.B7_DeviceConfig.WindowMin.Visible = true
 				wait(5)
-				MainUIClone.Boot.B7_DeviceConfig.WindowMin.Visible = false
+				Boot.B7_DeviceConfig.WindowMin.Visible = false
 				Boot.B7_DeviceConfig.Window.Visible = true
 				wait(5)
 				Boot.B7_DeviceConfig.Window.Body.Txt3.Text = "Device Found"
@@ -380,36 +380,36 @@ if VersionNo == 2 and LoopUpdate == false then
 							Boot.B8_ClosedStage.Visible = false
 							Boot.Visible = false
 							Boot.B8_ClosedStage.Message.Text2.Text = "Disconnected"
-							MainUIClone.Application.Visible = true
-							MainUIClone.Application.Darkened.Visible = true
+							MainUIClone.Visible = true
+							MainUIClone.Darkened.Visible = true
 							wait(2)
-							MainUIClone.Application.Darkened.JSMMessage.Visible = true
-							MainUIClone.Application.Darkened.JSMMessage.btn_Continue.MouseButton1Click:Connect(function()
+							MainUIClone.Darkened.JSMMessage.Visible = true
+							MainUIClone.Darkened.JSMMessage.btn_Continue.MouseButton1Click:Connect(function()
 								Touchy:Play()
-								MainUIClone.Application.Darkened.JSMMessage.Visible = false
-								MainUIClone.Application.Darkened.DataTransfer.Body.Text = "Data is currently being transfered from the handset."
+								MainUIClone.Darkened.JSMMessage.Visible = false
+								MainUIClone.Darkened.DataTransfer.Body.Text = "Data is currently being transfered from the handset."
 								wait(0.2)
-								MainUIClone.Application.Darkened.DataTransfer.Visible = true
+								MainUIClone.Darkened.DataTransfer.Visible = true
 								wait(5)
-								MainUIClone.Application.Darkened.DataTransfer.Visible = false
-								MainUIClone.Application.Darkened.TransferSuspendFail.ReasonCodes.Reason.Text = "Attempting to repair errors"
+								MainUIClone.Darkened.DataTransfer.Visible = false
+								MainUIClone.Darkened.TransferSuspendFail.ReasonCodes.Reason.Text = "Attempting to repair errors"
 								wait(5)
-								MainUIClone.Application.Darkened.DataTransferSuspend.Visible = true
+								MainUIClone.Darkened.DataTransferSuspend.Visible = true
 								wait(5)
-								MainUIClone.Application.Darkened.DataTransfer.Visible = false
-								MainUIClone.Application.Darkened.TransferSuspendFail.btn_Continue.Active = false
+								MainUIClone.Darkened.DataTransfer.Visible = false
+								MainUIClone.Darkened.TransferSuspendFail.btn_Continue.Active = false
 								wait(0.2)
-								MainUIClone.Application.Darkened.TransferSuspendFail.Visible = true
-								MainUIClone.Application.Darkened.TransferSuspendFail.ReasonCodes.Reason.Text = "Repair Status: Failed"
+								MainUIClone.Darkened.TransferSuspendFail.Visible = true
+								MainUIClone.Darkened.TransferSuspendFail.ReasonCodes.Reason.Text = "Repair Status: Failed"
 								wait(1)
-								MainUIClone.Application.Darkened.TransferSuspendFail.btn_Continue.Active = true
+								MainUIClone.Darkened.TransferSuspendFail.btn_Continue.Active = true
 							end)
-							MainUIClone.Application.Darkened.TransferSuspendFail.btn_Continue.MouseButton1Click:Connect(function()
+							MainUIClone.Darkened.TransferSuspendFail.btn_Continue.MouseButton1Click:Connect(function()
 								Touchy:Play()
-								MainUIClone.Boot.BSOD.Text2.Text = "SYSTEM_STOPPED_RESPONDING"
-								MainUIClone.Boot.BSOD.Visible = true
-								MainUIClone.Boot.Visible = true
-								MainUIClone.Application.Visible = false
+								Boot.BSOD.Text2.Text = "SYSTEM_STOPPED_RESPONDING"
+								Boot.BSOD.Visible = true
+								Boot.Visible = true
+								MainUIClone.Visible = false
 								RedFlash = true
 								RFlash()
 							end)
