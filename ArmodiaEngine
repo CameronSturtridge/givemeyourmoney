@@ -60,9 +60,6 @@ local MainUIClone = SCOV3A.Contributors.ArmodiaTest.Application:Clone()
 local ItemClone = SCOV3A.Contributors.ArmodiaTest.Item:Clone()
 Boot.Parent = Screen.SurfaceGui
 MainUIClone.Parent = Screen.SurfaceGui
-local Boot = Screen.SurfaceGui.Boot
-local Item = Screen.SurfaceGui.Item
-local Application = Screen.SurfaceGui.Application
 ItemClone.Parent = Screen.SurfaceGui
 local ArmodiaNoLonger = SCOV3A.Contributors.ArmodiaTest.NoLongerSupported
 local ArmodiaClone = ArmodiaNoLonger:Clone()
@@ -72,6 +69,9 @@ local UIUK = game.ServerStorage.UI_ModuleA.UK
 local Wales = UIUK.Parent.Wales
 local CloneWales = Wales:Clone() 
 local Running = Screen.Running
+local Boot = Screen.SurfaceGui.Boot
+local Item = Screen.SurfaceGui.Item
+local Application = Screen.SurfaceGui.Application
 
 function RFlash()
 	repeat
@@ -270,6 +270,7 @@ if Wales == false and Dead == false and SCOV3NewVersionDue == false and SCOV3Rem
 	wait(2)
 	Boot.Visible = true
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+        Boot.B7.DeviceConfig.Visible = true
 	wait(10)
 	Boot.B7_DeviceConfig.Visible = false
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
