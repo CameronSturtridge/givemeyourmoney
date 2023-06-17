@@ -17,7 +17,7 @@
 
 
 if game:GetService("RunService"):IsStudio() then
-	print("[JSM] Some Features may not work due to you being in studio. Please use the Roblox Player if you are on Desktop if you want these features.")
+	print("[AXON]: Enviroment = Roblox Studio - Some products / debug features may not work")
 end
 
 wait(0.2)
@@ -79,11 +79,26 @@ RFlash()
 end
 
 local KillSCO = false
+local HTTPError_ALL = true
 
 if KillSCO == true then
 	Boot:Destroy()
 	MainUIClone:Destroy()
-	Item:Destroy()
+	ItemClone:Destroy()
+end
+
+if HTTPError_ALL == true then
+	MainUIClone:Destroy()
+	ItemClone:Destroy()
+	Boot.Visible = true
+	Boot.B0_Check.Text3.Text = "HTTP Requests is disabled"
+	Boot.B0_Check.Text1.Text = "Error!"
+	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+	Boot.B0_Check.BackgroundTransparency = 0
+        Boot.B0_Check.Visible = true
+	wait(0.02)
+        Boot.B0_Check.Parent = Screen.SurfaceGui
+	warn("[AXON] HTTP Requests must be enabled for Lane: "..Settings.LaneNumber)
 end
 
 
@@ -91,7 +106,6 @@ if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
-	script:Destroy()
 	Machine:Destroy()
 end
 
