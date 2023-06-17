@@ -55,10 +55,10 @@ local Dead = false
 local Wales = false
 
 
-local Boot = SCOV3A.Contributors.ArmodiaTest.Boot:Clone()
+local Boot1 = SCOV3A.Contributors.ArmodiaTest.Boot:Clone()
 local MainUIClone = SCOV3A.Contributors.ArmodiaTest.Application:Clone()
 local ItemClone = SCOV3A.Contributors.ArmodiaTest.Item:Clone()
-Boot.Parent = Screen.SurfaceGui
+Boot1.Parent = Screen.SurfaceGui
 MainUIClone.Parent = Screen.SurfaceGui
 ItemClone.Parent = Screen.SurfaceGui
 local ArmodiaNoLonger = SCOV3A.Contributors.ArmodiaTest.NoLongerSupported
