@@ -89,7 +89,7 @@ end
 
 if HTTPError_ALL == true then
 	MainUIClone:Destroy()
-	ItemClone:Destroy()
+	Item:Destroy()
 	Boot.Visible = true
 	Boot.B0_Check.Text3.Text = "HTTP Requests is disabled"
 	Boot.B0_Check.Text1.Text = "Error!"
