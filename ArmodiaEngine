@@ -72,6 +72,7 @@ local Running = Screen.Running
 local Boot = Screen.SurfaceGui.Boot
 local Item = Screen.SurfaceGui.Item
 local Application = Screen.SurfaceGui.Application
+local Whitelisted = false
 
 function RFlash()
 	repeat
@@ -114,6 +115,7 @@ end
 
 if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
+ Whitelisted = true
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 	Machine:Destroy()
@@ -264,7 +266,7 @@ else
 end
 
 
-if Wales == false and Dead == false and SCOV3NewVersionDue == false and SCOV3Rem == false and LoopUpdate == false then
+if Whitelisted == true then
 	Screen.Parent["Button Panel"].PWRLED.Color = Color3.fromRGB(0, 255, 0)
 	Screen.Parent["Button Panel"].PWRLED.Material = "Neon"
 	wait(2)
