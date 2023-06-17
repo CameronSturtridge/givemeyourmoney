@@ -84,7 +84,7 @@ local HTTPError_ALL = true
 if KillSCO == true then
 	Boot:Destroy()
 	MainUIClone:Destroy()
-	ItemClone:Destroy()
+	Item:Destroy()
 end
 
 if HTTPError_ALL == true then
