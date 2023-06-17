@@ -13,7 +13,7 @@
 	
 ]]--
 
-   
+
 
 if game:GetService("RunService"):IsStudio() then
 	print("[JSM] Some Features may not work due to you being in studio. Please use the Roblox Player if you are on Desktop if you want these features.")
@@ -51,24 +51,23 @@ local TillVers = 2
 -- util
 local SCOV3NewVersionDue = false
 local SCOV3Rem = false
-local Dead = true
+local Dead = false
 local Wales = false
 
 
-local BootClone = SCOV3A.Contributors.ArmodiaTest.Boot:Clone()
+local Boot = SCOV3A.Contributors.ArmodiaTest.Boot:Clone()
 local MainUIClone = SCOV3A.Contributors.ArmodiaTest.Application:Clone()
 local ItemClone = SCOV3A.Contributors.ArmodiaTest.Item:Clone()
-BootClone.Parent = Screen.SurfaceGui
+Boot.Parent = Screen.SurfaceGui
 MainUIClone.Parent = Screen.SurfaceGui
 ItemClone.Parent = Screen.SurfaceGui
-local Boot = BootClone
 local ArmodiaNoLonger = SCOV3A.Contributors.ArmodiaTest.NoLongerSupported
 local ArmodiaClone = ArmodiaNoLonger:Clone()
 local Dead = game.ServerStorage.UI_ModuleA.Dead
 local DeadClone = Dead:Clone()
 local UIUK = game.ServerStorage.UI_ModuleA.UK
 local Wales = UIUK.Parent.Wales
-local CloneWales= Wales:Clone() 
+local CloneWales = Wales:Clone() 
 local Running = Screen.Running
 
 function RFlash()
@@ -118,31 +117,45 @@ else
 end
 
 local LoopUpdate = false
-local Transfer =  BootClone.B7_DeviceConfig:Clone()
+local Transfer =  Boot.B7_DeviceConfig:Clone()
 
 
 if LoopUpdate == true then
-        Transfer.Parent = Screen.SurfaceGui
-        Transfer.Visible = true
-      Screen.SurfaceGui.B7_DeviceConfig.Visible = true
-      Transfer.UpdateScreen.Visible = true
+	Transfer.Parent = Screen.SurfaceGui
+	Transfer.Visible = true
+	Screen.SurfaceGui.B7_DeviceConfig.Visible = true
+	Transfer.UpdateScreen.Visible = true
 	wait(0.2)
-Boot:Destroy()
-BootClone:Destroy()
-MainUIClone:Destroy()
-ItemClone:Destroy()
-RedFlash = true
-RFlash()
+	Boot:Destroy()
+	Boot:Destroy()
+	MainUIClone:Destroy()
+	ItemClone:Destroy()
+	RedFlash = true
+	RFlash()
 end
 
 
 local KillSCO = false
+local HTTPError_ALL = true
 
 if KillSCO == true then
-Boot:Destroy()
-BootClone:Destroy()
-MainUIClone:Destroy()
-ItemClone:Destroy()
+	Boot:Destroy()
+	MainUIClone:Destroy()
+	ItemClone:Destroy()
+end
+
+if HTTPError_ALL == true then
+	MainUIClone:Destroy()
+	ItemClone:Destroy()
+	Boot.Visible = true
+	Boot.B0_Check.Text3.Text = "HTTP Requests is disabled"
+	Boot.B0_Check.Text1.Text = "Error!"
+	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+	Boot.B0_Check.BackgroundTransparency = 0
+        Boot.B0_Check.Visible = true
+	wait(0.02)
+        Boot.B0_Check.Parent = Screen.SurfaceGui
+	warn("[AXON] HTTP Requests must be enabled for Lane: "..Settings.LaneNumber)
 end
 
 script.Utilities.Enabled = true
@@ -186,7 +199,6 @@ Screen.Parent["Button Panel"].PWRLED.Material = "SmoothPlastic"
 
 
 
-wait(2)
 if SCOV3Rem == true then
 	ShutdownV2Clone.Parent = Screen.SurfaceGui
 	ShutdownV2Clone.Visible = true
@@ -206,7 +218,7 @@ if Dead == true then
 	DeadClone.Parent = Screen.SurfaceGui
 	DeadClone.Visible = true
 	MainUIClone:Destroy()
-	BootClone:Destroy()
+	Boot:Destroy()
 	ItemClone:Destroy()
 	script:Destroy()
 	UIUK.Parent = Screen
@@ -216,15 +228,11 @@ if Wales == true then
 	DeadClone.Parent = Screen.SurfaceGui
 	DeadClone.Visible = true
 	MainUIClone:Destroy()
-	BootClone:Destroy()
+	Boot:Destroy()
 	ItemClone:Destroy()
 	script:Destroy()
 	CloneWales.Parent = Screen
 	CloneWales:Play()
-	RedFlash = true
-	RFlash()
-	wait(5)
-	RedFlash = false
 	Tri.LED.Color = Color3.fromRGB(255,0,0)
 	Tri.LED.Material = "Neon"
 	Tri.LED.Transparency = 0
