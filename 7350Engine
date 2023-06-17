@@ -233,7 +233,6 @@ if VersionNo == 2 and LoopUpdate == false then
 	Fan.Motor.HingeConstraint.AngularVelocity = 30
 	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
 	wait(2)
-	MainUIClone.Enabled = true
 	MainUIClone.Boot.Visible = true
 	MainUIClone.Boot.B7_DeviceConfig.UpdateScreen.Visible = true
 	wait(10)
