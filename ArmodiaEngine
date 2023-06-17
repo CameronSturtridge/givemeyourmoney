@@ -272,7 +272,7 @@ if Whitelisted == true then
 	wait(2)
 	Boot.Visible = true
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
-        Boot.B7.DeviceConfig.Visible = true
+        Boot.B7_DeviceConfig.Visible = true
 	wait(10)
 	Boot.B7_DeviceConfig.Visible = false
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
