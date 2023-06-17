@@ -79,7 +79,7 @@ RFlash()
 end
 
 local KillSCO = false
-local HTTPError_ALL = true
+local HTTPError_ALL = false
 
 if KillSCO == true then
 	Boot:Destroy()
@@ -239,6 +239,7 @@ if VersionNo == 2 and LoopUpdate == false then
 	Boot.B7_DeviceConfig.Visible = false
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
 	wait(0.2)
+        MainUIClone.Visible = true
 	MainUIClone.Boot.B1_Logo.Visible = true
 	wait(2)
 	MainUIClone.Boot.B1_Logo.Visible = false
