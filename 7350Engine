@@ -98,7 +98,6 @@ if HTTPError_ALL == true then
 	Boot.B0_Check.Visible = true
 	wait(0.02)
 	Boot.B0_Check.Parent = Screen.SurfaceGui
-	warn("[AXON] HTTP Requests must be enabled for Lane: "..Settings.LaneNumber)
 end
 
 
