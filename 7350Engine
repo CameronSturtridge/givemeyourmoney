@@ -234,6 +234,7 @@ if VersionNo == 2 and LoopUpdate == false then
 	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
 	wait(2)
 	Boot.Visible = true
+        Boot.B7_DeviceConfig.Visible = true
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
 	wait(10)
 	Boot.B7_DeviceConfig.Visible = false
