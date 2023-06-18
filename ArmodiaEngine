@@ -15,9 +15,6 @@
 
 
 
-if game:GetService("RunService"):IsStudio() then
-	print("[AXON]: Enviroment = Roblox Studio - Some products / debug features may not work")
-end
 
 
 
