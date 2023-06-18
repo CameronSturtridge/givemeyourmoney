@@ -157,6 +157,10 @@ if HTTPError_ALL == true then
         Boot.B0_Check.Visible = true
 	wait(0.02)
         Boot.B0_Check.Parent = Screen.SurfaceGui
+        wait(0.1)
+        Boot:Destroy()
+        RedFlash = true
+        RFlash()
 end
 
 script.Utilities.Enabled = true
