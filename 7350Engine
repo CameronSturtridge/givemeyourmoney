@@ -54,11 +54,13 @@ ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 2
 local LoopUpdate = false
+local Whitelisted = false
 
 Boot.Parent = Screen.SurfaceGui
 Item.Parent = Screen.SurfaceGui
 MainUIClone.Parent = Screen.SurfaceGui
 local B7Clone = Boot.B7_DeviceConfig:Clone()
+local UpdateMachine = true
 
 wait(0.2)
 
@@ -104,6 +106,7 @@ end
 
 if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
+        Whitelisted = true
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 	Machine:Destroy()
@@ -223,9 +226,25 @@ elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
 end
 
+function UpdateMachine() 
+Boot.Visible = true
+        Boot.B7_DeviceConfig.Visible = true
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+	wait(10)
+	Boot.B7_DeviceConfig.Visible = false
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
+	wait(0.2)
+end
 
+If UpdateMachine == true then 
+UpdateMachine()
+else 
+StartMachine()
+end
 
-if VersionNo == 2 and LoopUpdate == false then
+function StartMachine()
+wait(0.5)
+if Whitelisted == true and LoopUpdate == false then
 	wait(6)
 	Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 	Screen.Parent.LED.Material = "Neon"
@@ -233,13 +252,6 @@ if VersionNo == 2 and LoopUpdate == false then
 	Fan.Motor.HingeConstraint.AngularVelocity = 30
 	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
 	wait(2)
-	Boot.Visible = true
-        Boot.B7_DeviceConfig.Visible = true
-	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
-	wait(10)
-	Boot.B7_DeviceConfig.Visible = false
-	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
-	wait(0.2)
 	Boot.Visible = true
 	Boot.B1_Logo.Visible = true
 	wait(2)
@@ -420,4 +432,12 @@ if VersionNo == 2 and LoopUpdate == false then
 			end
 		end
 	end
+end
+end
+
+
+If UpdateMachine == true then 
+UpdateMachine()
+elseif UpdateMachine == false then
+StartMachine()
 end
