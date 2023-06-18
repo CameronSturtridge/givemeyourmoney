@@ -1,0 +1,14 @@
+local All = script.Parent.Parent.Parent
+
+if game:GetService("RunService"):IsStudio() then
+	print("[AXON]: Enviroment = Roblox Studio - Some products / debug features may not work")
+end
+
+if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
+	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
+	Whitelisted = true
+else 
+	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
+	All:Destroy()
+end
+
