@@ -227,7 +227,6 @@ elseif v2 == false and Settings.StartMode == 1 then
 end
 
 function UpdateMachine() 
-	warn("Update Due for Till: "..Settings.LaneNumber)
 	Boot.Visible = true
 	Boot.B7_DeviceConfig.Visible = true
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
@@ -236,15 +235,22 @@ function UpdateMachine()
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
 	Boot.Visible = false
 	wait(0.2)
-	StartMachine()
 end
 
-function StartMachine()
+if Whitelisted == true and LoopUpdate == false and UpdateMachine == false then
 	Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 	Screen.Parent.LED.Material = "Neon"
 	wait(0.5)
 	Fan.Motor.HingeConstraint.AngularVelocity = 30
 	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
+        Boot.Visible = true
+	Boot.B7_DeviceConfig.Visible = true
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
+	wait(10)
+	Boot.B7_DeviceConfig.Visible = false
+	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
+	Boot.Visible = false
+	wait(0.1)
 	Boot.Visible = true
 	Boot.B1_Logo.Visible = true
 	wait(2)
@@ -431,6 +437,4 @@ end
 wait(0.5)
 if UpdateMachine == true then 
 	UpdateMachine()
-elseif Whitelisted == true and LoopUpdate == false and UpdateMachine == false then
-	StartMachine()
-	end 
+end
