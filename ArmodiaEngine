@@ -138,7 +138,7 @@ end
 
 
 local KillSCO = false
-local HTTPError_ALL = false
+local HTTPError_ALL = true
 
 if KillSCO == true then
 	Boot:Destroy()
