@@ -242,10 +242,9 @@ end
 function StartMachine()
 	Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
 	Screen.Parent.LED.Material = "Neon"
-	wait(2)
+	wait(0.5)
 	Fan.Motor.HingeConstraint.AngularVelocity = 30
 	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
-	wait(2)
 	Boot.Visible = true
 	Boot.B1_Logo.Visible = true
 	wait(2)
