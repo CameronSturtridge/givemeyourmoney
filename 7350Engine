@@ -105,7 +105,7 @@ end
 
 
 if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
-	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
+	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
 	Whitelisted = true
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
@@ -226,16 +226,6 @@ elseif v2 == false and Settings.StartMode == 1 then
 	print("yes")
 end
 
-function UpdateMachine() 
-	Boot.Visible = true
-	Boot.B7_DeviceConfig.Visible = true
-	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
-	wait(10)
-	Boot.B7_DeviceConfig.Visible = false
-	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
-	Boot.Visible = false
-	wait(0.2)
-end
 
 if Whitelisted == true and LoopUpdate == false and UpdateMachine == false then
 	Screen.Parent.LED.Color = Color3.fromRGB(0, 118, 173)
@@ -243,7 +233,7 @@ if Whitelisted == true and LoopUpdate == false and UpdateMachine == false then
 	wait(0.5)
 	Fan.Motor.HingeConstraint.AngularVelocity = 30
 	Fan.Parent["JSM | POS Controller"].Body.Running:Play()
-        Boot.Visible = true
+	Boot.Visible = true
 	Boot.B7_DeviceConfig.Visible = true
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
 	wait(10)
@@ -433,8 +423,3 @@ if Whitelisted == true and LoopUpdate == false and UpdateMachine == false then
 	end
 end
 
-
-wait(0.5)
-if UpdateMachine == true then 
-	UpdateMachine()
-end
