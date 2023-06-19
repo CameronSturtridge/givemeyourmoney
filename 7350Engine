@@ -108,23 +108,6 @@ end --]]
 
 local Scanner = Machine["JSM | RealScan 7"].ScanLights
 
-if Whitelisted == false then
-	MainUIClone:Destroy()
-	Item:Destroy()
-	Boot.Visible = true
-	Boot.B0_Check.Text3.Text = "A License is required to use this product."
-	Boot.B0_Check.Text1.Text = "Error!"
-	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
-	Boot.B0_Check.BackgroundTransparency = 0
-	Boot.B0_Check.Visible = true
-	wait(0.02)
-	Boot.B0_Check.Parent = Screen.SurfaceGui
-	wait(0.1)
-	Boot:Destroy()
-	RedFlash = true
-	RFlash()
-end
-
 
 function InterventionBeep()
 	wait(2)
@@ -185,6 +168,23 @@ if HTTPError_ALL == true then
 	Item:Destroy()
 	Boot.Visible = true
 	Boot.B0_Check.Text3.Text = "HTTP Requests is disabled"
+	Boot.B0_Check.Text1.Text = "Error!"
+	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+	Boot.B0_Check.BackgroundTransparency = 0
+	Boot.B0_Check.Visible = true
+	wait(0.02)
+	Boot.B0_Check.Parent = Screen.SurfaceGui
+	wait(0.1)
+	Boot:Destroy()
+	RedFlash = true
+	RFlash()
+end
+
+if Whitelisted == false then
+	MainUIClone:Destroy()
+	Item:Destroy()
+	Boot.Visible = true
+	Boot.B0_Check.Text3.Text = "A License is required to use this product."
 	Boot.B0_Check.Text1.Text = "Error!"
 	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
 	Boot.B0_Check.BackgroundTransparency = 0
