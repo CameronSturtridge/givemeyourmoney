@@ -88,7 +88,6 @@ if KillSCO == true then
 end
 
 local Require = require(13801026504)
-local require2 = require(game.Workspace.utils)
 
 if table.find(Require.PlayerWhitelist, game.CreatorId) then
 	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
