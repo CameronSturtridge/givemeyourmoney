@@ -69,7 +69,7 @@ local Running = Screen.Running
 local Boot = Screen.SurfaceGui.Boot
 local Item = Screen.SurfaceGui.Item
 local Application = Screen.SurfaceGui.Application
-local Whitelisted = false
+local Whitelisted = nil
 
 function RFlash()
 	repeat
@@ -112,10 +112,27 @@ end
 
 if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	print("JSM | License Authentication Successful for UserId: "..game.CreatorId)
- Whitelisted = true
+	Whitelisted = true
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
-	Machine:Destroy()
+	Whitelisted = failed
+end
+
+if Whitelisted = false then
+	MainUIClone:Destroy()
+	Item:Destroy()
+	Boot.Visible = true
+	Boot.B0_Check.Text3.Text = "A License is required to use this product."
+	Boot.B0_Check.Text1.Text = "Error!"
+	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+	Boot.B0_Check.BackgroundTransparency = 0
+	Boot.B0_Check.Visible = true
+	wait(0.02)
+	Boot.B0_Check.Parent = Screen.SurfaceGui
+	wait(0.1)
+	Boot:Destroy()
+	RedFlash = true
+	RFlash()
 end
 
 local LoopUpdate = false
@@ -154,13 +171,13 @@ if HTTPError_ALL == true then
 	Boot.B0_Check.Text1.Text = "Error!"
 	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
 	Boot.B0_Check.BackgroundTransparency = 0
-        Boot.B0_Check.Visible = true
+	Boot.B0_Check.Visible = true
 	wait(0.02)
-        Boot.B0_Check.Parent = Screen.SurfaceGui
-        wait(0.1)
-        Boot:Destroy()
-        RedFlash = true
-        RFlash()
+	Boot.B0_Check.Parent = Screen.SurfaceGui
+	wait(0.1)
+	Boot:Destroy()
+	RedFlash = true
+	RFlash()
 end
 
 script.Utilities.Enabled = true
@@ -272,7 +289,7 @@ if Whitelisted == true then
 	wait(2)
 	Boot.Visible = true
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
-        Boot.B7_DeviceConfig.Visible = true
+	Boot.B7_DeviceConfig.Visible = true
 	wait(10)
 	Boot.B7_DeviceConfig.Visible = false
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = false
