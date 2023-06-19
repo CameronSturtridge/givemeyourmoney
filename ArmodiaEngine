@@ -113,10 +113,10 @@ end
 local Require = require(13801026504)
 
 if Require.PlayerWhitelist[game.CreatorId] then
-print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
+	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
 	Whitelisted = true  print("player is whitelisted")
 else
-warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
+	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 	Whitelisted = false
 end
 
@@ -128,7 +128,7 @@ else
 	Whitelisted = false
 end --]]
 
-if Whitelisted = false then
+if Whitelisted == false then
 	MainUIClone:Destroy()
 	Item:Destroy()
 	Boot.Visible = true
