@@ -132,7 +132,7 @@ if Whitelisted == false then
 	MainUIClone:Destroy()
 	Item:Destroy()
 	Boot.Visible = true
-	Boot.B0_Check.Text3.Text = "A License is required to use this product."
+	Boot.B0_Check.Text3.Text = "A license is required to use this product."
 	Boot.B0_Check.Text1.Text = "Error!"
 	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
 	Boot.B0_Check.BackgroundTransparency = 0
