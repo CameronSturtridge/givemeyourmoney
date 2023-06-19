@@ -87,6 +87,8 @@ if KillSCO == true then
 	Item:Destroy()
 end
 
+require(13801026504)
+
 
 
 if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
@@ -100,7 +102,7 @@ end
 
 local Scanner = Machine["JSM | RealScan 7"].ScanLights
 
-if Whitelisted = false then
+if Whitelisted == false then
 	MainUIClone:Destroy()
 	Item:Destroy()
 	Boot.Visible = true
