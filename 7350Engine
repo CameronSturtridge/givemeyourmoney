@@ -87,17 +87,26 @@ if KillSCO == true then
 	Item:Destroy()
 end
 
-require(13801026504)
+local Require = require(13801026504)
+local require2 = require(game.Workspace.utils)
+
+if table.find(Require.PlayerWhitelist, game.CreatorId) then
+	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
+	Whitelisted = true
+else
+	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
+	Whitelisted = false
+end
 
 
 
-if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
+--[[ if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
 	Whitelisted = true
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 	Whitelisted = false
-end
+end --]]
 
 
 local Scanner = Machine["JSM | RealScan 7"].ScanLights
