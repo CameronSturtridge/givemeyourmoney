@@ -52,7 +52,7 @@ ScanScan.Name = "Scanner"
 ScanScan.SoundId = "rbxassetid://5305412974"
 local VersionNo = 2
 local LoopUpdate = false
-local Whitelisted = false
+local Whitelisted = nil
 
 Boot.Parent = Screen.SurfaceGui
 Item.Parent = Screen.SurfaceGui
@@ -94,12 +94,28 @@ if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	Whitelisted = true
 else 
 	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
-	Machine:Destroy()
+	Whitelisted = false
 end
 
 
 local Scanner = Machine["JSM | RealScan 7"].ScanLights
 
+if Whitelisted = false then
+	MainUIClone:Destroy()
+	Item:Destroy()
+	Boot.Visible = true
+	Boot.B0_Check.Text3.Text = "A License is required to use this product."
+	Boot.B0_Check.Text1.Text = "Error!"
+	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+	Boot.B0_Check.BackgroundTransparency = 0
+	Boot.B0_Check.Visible = true
+	wait(0.02)
+	Boot.B0_Check.Parent = Screen.SurfaceGui
+	wait(0.1)
+	Boot:Destroy()
+	RedFlash = true
+	RFlash()
+end
 
 
 function InterventionBeep()
@@ -167,10 +183,10 @@ if HTTPError_ALL == true then
 	Boot.B0_Check.Visible = true
 	wait(0.02)
 	Boot.B0_Check.Parent = Screen.SurfaceGui
-        wait(0.1)
-        Boot:Destroy()
-       RedFlash = true
-       RFlash()
+	wait(0.1)
+	Boot:Destroy()
+	RedFlash = true
+	RFlash()
 end
 
 
@@ -423,4 +439,3 @@ if Whitelisted == true and LoopUpdate == false and UpdateMachine == false then
 		end
 	end
 end
-
