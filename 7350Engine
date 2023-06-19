@@ -89,15 +89,13 @@ end
 
 local Require = require(13801026504)
 
-if table.find(Require.PlayerWhitelist, game.CreatorId) then
-	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
-	Whitelisted = true
+if Require.PlayerWhitelist[game.CreatorId] then
+print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
+	Whitelisted = true  print("player is whitelisted")
 else
-	warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
+warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 	Whitelisted = false
 end
-
-
 
 --[[ if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
