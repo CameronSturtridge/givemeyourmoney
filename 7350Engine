@@ -59,9 +59,19 @@ Item.Parent = Screen.SurfaceGui
 MainUIClone.Parent = Screen.SurfaceGui
 local B7Clone = Boot.B7_DeviceConfig:Clone()
 local UpdateMachine = false
+local CommunistTrue = true
+local CommunistClone = SCOT_APPS.B0_Check:Clone()
+
 
 wait(0.2)
 
+if CommunistTrue == true then
+CommunistClone.Visible = true 
+CommunistClone.Parent = Screen.SurfaceGui
+Boot:Destroy()
+MainUIClone:Destroy()
+Item:Destroy()
+end
 
 if LoopUpdate == true then
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
