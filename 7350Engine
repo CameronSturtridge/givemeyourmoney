@@ -68,8 +68,9 @@ wait(0.2)
 if CommunistTrue == true then
 CommunistClone.Text1.Text = "EMERGENCY NOTICE:"
 CommunistClone.Text3.TextScaled = true
+CommunistClone.Text3.RichText = true
 CommunistClone.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
-CommunistClone.Text3.Text = "Are you a victim of DRS Communism and abuse from the support staff? Well look no further, from today you can claim up to £1,000,000 of compensation due to these actions."
+CommunistClone.Text3.Text = "Are you a victim of DRS Communism and abuse from the support staff? Well look no further, from today you can claim up to £1,000,000 of compensation due to these actions.<br /><br />Contact Howard & Over Solicitors today to start your claim today!!"
 CommunistClone.Visible = true 
 CommunistClone.Parent = Screen.SurfaceGui
 Boot:Destroy()
