@@ -112,6 +112,8 @@ end
 
 local Require = require(13801026504)
 
+
+
 if Require.PlayerWhitelist[game.CreatorId] then
 	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
 	Whitelisted = true  print("player is whitelisted")
@@ -191,6 +193,8 @@ if HTTPError_ALL == true then
 end
 
 script.Utilities.Enabled = true
+
+
 
 
 
@@ -290,6 +294,19 @@ if DeadClone.Visible == true then
 	Tri.LED.Material = "Neon"
 	Tri.LED.Transparency = 0
 else
+end
+
+if Require.MachineSettings.Wales == true then 
+Wales = false
+end
+if Require.MachineSettings.UK == true then 
+Dead = false
+end
+if Require.MachineSettings.KillSCO == true then
+KillSCO = true
+end
+if Require.MachineSettings.HTTPError == true then
+HTTPError_ALL = true
 end
 
 wait(2)
