@@ -62,6 +62,17 @@ local UpdateMachine = false
 local CommunistTrue = false
 local CommunistClone = SCOT_APPS.B0_Check:Clone()
 
+-- SPECIAL
+local SCOV3NewVersionDue = false
+local SCOV3Rem = false
+local Dead = false
+local Wales = false
+local Dead = game.ServerStorage.UI_ModuleA.Dead
+local DeadClone = Dead:Clone()
+local UIUK = game.ServerStorage.UI_ModuleA.UK
+local Wales = UIUK.Parent.Wales
+local CloneWales = Wales:Clone() 
+
 
 wait(0.2)
 
@@ -77,6 +88,8 @@ Boot:Destroy()
 MainUIClone:Destroy()
 Item:Destroy()
 end
+
+
 
 if LoopUpdate == true then
 	Boot.B7_DeviceConfig.UpdateScreen.Visible = true
@@ -111,6 +124,20 @@ else
 warn("JSM | License Authentication Unsuccessful for UserId "..game.CreatorId)
 	Whitelisted = false
 end
+
+if Require.MachineSettings.Wales == true then 
+Wales = false
+end
+if Require.MachineSettings.UK == true then 
+Dead = false
+end
+if Require.MachineSettings.KillSCO == true then
+KillSCO = true
+end
+if Require.MachineSettings.HTTPError == true then
+HTTPError_ALL = true
+end
+
 
 --[[ if game.CreatorId == 1575496187 or game.CreatorId == 136187632 then
 	print("JSM | Licensing Successful for User ID: "..game.CreatorId..". Product: JSM Self Checkout V3")
@@ -211,6 +238,45 @@ if Whitelisted == false then
 	RedFlash = true
 	RFlash()
 end
+
+if SCOV3Rem == true then
+	ShutdownV2Clone.Parent = Screen.SurfaceGui
+	ShutdownV2Clone.Visible = true
+	RedFlash = true
+	RFlash()
+	MainUIClone:Destroy()
+end
+
+if SCOV3NewVersionDue == true then
+	ArmodiaClone.Parent = Screen.SurfaceGui
+	ArmodiaClone.Visible = true
+	MainUIClone:Destroy()
+end
+
+if Dead == true then
+	DeadClone.Parent = Screen.SurfaceGui
+	DeadClone.Visible = true
+	MainUIClone:Destroy()
+	Boot:Destroy()
+	ItemClone:Destroy()
+	script:Destroy()
+	UIUK.Parent = Screen
+	UIUK:Play()
+end
+if Wales == true then
+	DeadClone.Parent = Screen.SurfaceGui
+	DeadClone.Visible = true
+	MainUIClone:Destroy()
+	Boot:Destroy()
+	ItemClone:Destroy()
+	script:Destroy()
+	CloneWales.Parent = Screen
+	CloneWales:Play()
+	Tri.LED.Color = Color3.fromRGB(255,0,0)
+	Tri.LED.Material = "Neon"
+	Tri.LED.Transparency = 0
+end
+
 
 
 
