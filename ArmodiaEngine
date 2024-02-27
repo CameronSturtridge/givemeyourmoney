@@ -51,7 +51,7 @@ local SCOV3Rem = false
 local Dead = false
 local Wales = false
 local CommunistTrue = false
-local CommunistClone = SCOT_APPS.B0_Check:Clone()
+local CommunistClone = SCOT_APPS.SCOv3.CustomSCOV3.B0_Check:Clone()
 
 
 local Boot1 = SCOV3A.Contributors.ArmodiaTest.Boot:Clone()
