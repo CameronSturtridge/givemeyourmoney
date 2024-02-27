@@ -71,6 +71,9 @@ local Item = Screen.SurfaceGui.Item
 local Application = Screen.SurfaceGui.Application
 local Whitelisted = nil
 
+local KillSCO = false
+local HTTPError_ALL = false
+
 function RFlash()
 	repeat
 		Tri.LED.Color = Color3.fromRGB(255,0,0)
@@ -166,31 +169,7 @@ if LoopUpdate == true then
 end
 
 
-local KillSCO = false
-local HTTPError_ALL = false
 
-if KillSCO == true then
-	Boot:Destroy()
-	MainUIClone:Destroy()
-	ItemClone:Destroy()
-end
-
-if HTTPError_ALL == true then
-	MainUIClone:Destroy()
-	ItemClone:Destroy()
-	Boot.Visible = true
-	Boot.B0_Check.Text3.Text = "HTTP Requests is disabled"
-	Boot.B0_Check.Text1.Text = "Error!"
-	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
-	Boot.B0_Check.BackgroundTransparency = 0
-	Boot.B0_Check.Visible = true
-	wait(0.02)
-	Boot.B0_Check.Parent = Screen.SurfaceGui
-	wait(0.1)
-	Boot:Destroy()
-	RedFlash = true
-	RFlash()
-end
 
 script.Utilities.Enabled = true
 
@@ -233,7 +212,34 @@ Screen.Parent["Button Panel"].PWRLED.Material = "SmoothPlastic"
 
 
 
+function Shutdownlol()
+	wait(2)
+	Boot.B5_WindowsScreen.LoadText.Text = "Shutting Down"
+	MainUIClone.Darkened.ShutdownPrompt = false
+	MainUIClone.Visible = false
+	Boot.Visible = true
+	wait(1)
+	Boot.B5_WindowsScreen.Visible = true
+	Shutdwn()
+	wait(10)
+	Boot.Visible = false
+	Boot.B5_WindowsScreen.Visible = false
+	Boot.B5_WindowsScreen.LoadText.Text = "Starting Up..."
+end
 
+
+if Require.MachineSettings.Wales == true then 
+Wales = false
+end
+if Require.MachineSettings.UK == true then 
+Dead = false
+end
+if Require.MachineSettings.KillSCO == true then
+KillSCO = true
+end
+if Require.MachineSettings.HTTPError == true then
+HTTPError_ALL = true
+end
 
 if SCOV3Rem == true then
 	ShutdownV2Clone.Parent = Screen.SurfaceGui
@@ -274,21 +280,6 @@ if Wales == true then
 	Tri.LED.Transparency = 0
 end
 
-function Shutdownlol()
-	wait(2)
-	Boot.B5_WindowsScreen.LoadText.Text = "Shutting Down"
-	MainUIClone.Darkened.ShutdownPrompt = false
-	MainUIClone.Visible = false
-	Boot.Visible = true
-	wait(1)
-	Boot.B5_WindowsScreen.Visible = true
-	Shutdwn()
-	wait(10)
-	Boot.Visible = false
-	Boot.B5_WindowsScreen.Visible = false
-	Boot.B5_WindowsScreen.LoadText.Text = "Starting Up..."
-end
-
 if DeadClone.Visible == true then
 	Tri.LED.Color = Color3.fromRGB(255,0,0)
 	Tri.LED.Material = "Neon"
@@ -296,18 +287,31 @@ if DeadClone.Visible == true then
 else
 end
 
-if Require.MachineSettings.Wales == true then 
-Wales = false
+if KillSCO == true then
+	Boot:Destroy()
+	MainUIClone:Destroy()
+	ItemClone:Destroy()
 end
-if Require.MachineSettings.UK == true then 
-Dead = false
+
+if HTTPError_ALL == true then
+	MainUIClone:Destroy()
+	ItemClone:Destroy()
+	Boot.Visible = true
+	Boot.B0_Check.Text3.Text = "HTTP Requests is disabled"
+	Boot.B0_Check.Text1.Text = "Error!"
+	Boot.B0_Check.Text1.TextColor3 = Color3.fromRGB(255, 0, 0)
+	Boot.B0_Check.BackgroundTransparency = 0
+	Boot.B0_Check.Visible = true
+	wait(0.02)
+	Boot.B0_Check.Parent = Screen.SurfaceGui
+	wait(0.1)
+	Boot:Destroy()
+	RedFlash = true
+	RFlash()
 end
-if Require.MachineSettings.KillSCO == true then
-KillSCO = true
-end
-if Require.MachineSettings.HTTPError == true then
-HTTPError_ALL = true
-end
+
+
+
 
 wait(2)
 if Whitelisted == true then
