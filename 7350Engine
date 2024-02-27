@@ -59,7 +59,7 @@ Item.Parent = Screen.SurfaceGui
 MainUIClone.Parent = Screen.SurfaceGui
 local B7Clone = Boot.B7_DeviceConfig:Clone()
 local UpdateMachine = false
-local CommunistTrue = false
+local CommunistTrue = true
 local CommunistClone = SCOT_APPS.B0_Check:Clone()
 
 -- SPECIAL
