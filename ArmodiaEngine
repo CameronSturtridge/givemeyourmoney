@@ -49,8 +49,8 @@ local TillVers = 2
 local SCOV3NewVersionDue = false
 local SCOV3Rem = false
 local Dead = false
-local Wales = false
-local CommunistTrue = true
+local Wales = true
+local CommunistTrue = false
 local CommunistClone = SCOT_APPS.SCOv3.CustomSCOV3.B0_Check:Clone()
 
 
