@@ -59,14 +59,14 @@ Item.Parent = Screen.SurfaceGui
 MainUIClone.Parent = Screen.SurfaceGui
 local B7Clone = Boot.B7_DeviceConfig:Clone()
 local UpdateMachine = false
-local CommunistTrue = true
+local CommunistTrue = false
 local CommunistClone = SCOT_APPS.B0_Check:Clone()
 
 -- SPECIAL
 local SCOV3NewVersionDue = false
 local SCOV3Rem = false
 local Dead = false
-local Wales = false
+local Wales = true
 local Dead = game.ServerStorage.UI_ModuleA.Dead
 local DeadClone = Dead:Clone()
 local UIUK = game.ServerStorage.UI_ModuleA.UK
